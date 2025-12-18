@@ -1,0 +1,62 @@
+### Test root
+GET http://localhost:3000/
+
+### Register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "password123"
+}
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "password123"
+}
+
+### Protected route (replace TOKEN with your token)
+GET http://localhost:3000/api/protected
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzdjNmIyNjk5NDFkZDU3NThkOTEiLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2MDMxNDY3LCJleHAiOjE3NjY2MzYyNjd9.jJDWlotI1ouZhfDh3MxbWi81-hksg_iEnKU8Yg3RjRg
+
+### GET all items (replace TOKEN with your token)
+GET http://localhost:3000/api/items
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzdjNmIyNjk5NDFkZDU3NThkOTEiLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2MDMxNDY3LCJleHAiOjE3NjY2MzYyNjd9.jJDWlotI1ouZhfDh3MxbWi81-hksg_iEnKU8Yg3RjRg
+
+### CREATE new item
+POST http://localhost:3000/api/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzdjNmIyNjk5NDFkZDU3NThkOTEiLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2MDMxNDY3LCJleHAiOjE3NjY2MzYyNjd9.jJDWlotI1ouZhfDh3MxbWi81-hksg_iEnKU8Yg3RjRg
+
+{
+  "name": "Blue Jeans",
+  "category": "clothing",
+  "price": 49.99,
+  "description": "Classic denim jeans",
+  "color": "blue",
+  "size": "M",
+  "brand": "Levi's",
+  "imageUrl": "https://example.com/jeans.jpg"
+}
+
+### GET single item by ID (replace ID and TOKEN)
+GET http://localhost:3000/api/items/69438c7f3a6e9066e75dd49f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzdjNmIyNjk5NDFkZDU3NThkOTEiLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2MDMxNDY3LCJleHAiOjE3NjY2MzYyNjd9.jJDWlotI1ouZhfDh3MxbWi81-hksg_iEnKU8Yg3RjRg
+
+### UPDATE item (replace ID and TOKEN)
+PUT http://localhost:3000/api/items/69438c7f3a6e9066e75dd49f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzdjNmIyNjk5NDFkZDU3NThkOTEiLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2MDMxNDY3LCJleHAiOjE3NjY2MzYyNjd9.jJDWlotI1ouZhfDh3MxbWi81-hksg_iEnKU8Yg3RjRg
+
+{
+  "price": 39.99,
+  "color": "black"
+}
+
+### DELETE item (replace ID and TOKEN)
+DELETE http://localhost:3000/api/items/69438c7f3a6e9066e75dd49f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTQzNzdjNmIyNjk5NDFkZDU3NThkOTEiLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY2MDMxNDY3LCJleHAiOjE3NjY2MzYyNjd9.jJDWlotI1ouZhfDh3MxbWi81-hksg_iEnKU8Yg3RjRg
